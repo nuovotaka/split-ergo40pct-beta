@@ -50,27 +50,27 @@
         device = <&trackball>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
 
-        snipe {
-            layers = <5>;
+//        snipe {
+//            layers = <5>;
+//            input-processors =
+//                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
+//                <&zip_xy_scaler 1 4>;
+//        };
+
+        scroll {
+            layers = <6>;
             input-processors =
                 <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-                <&zip_xy_scaler 1 4>;
+                <&zip_xy_to_scroll_mapper>;
         };
 
-//        scroll {
-//            layers = <6>;
-//            input-processors =
-//                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-//                <&zip_xy_to_scroll_mapper>;
-//        };
-
-//        scroller_snipe {
-//            layers = <7>;
-//            input-processors =
-//                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-//                <&zip_xy_scaler 1 16>,
-//                <&zip_xy_to_scroll_mapper>;
-//        };
+        scroller_snipe {
+            layers = <7>;
+            input-processors =
+                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
+                <&zip_xy_scaler 1 16>,
+                <&zip_xy_to_scroll_mapper>;
+        };
     };
 
 };
@@ -114,8 +114,8 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
 
-        snipe-layers = <5>;
-        // scroll-layers = <6 7>;
+        // snipe-layers = <5>;
+        scroll-layers = <6 7>;
     };
 };
 
