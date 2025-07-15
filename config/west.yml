@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: zmk-driver-paw3222-alpha
       remote: nuovotaka
-      revision: main
+      revision: horizontal
   self:
     path: config
