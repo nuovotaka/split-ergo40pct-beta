@@ -71,19 +71,9 @@
             key-positions = <50 44>;
         };
 
-        scroll-h {
-            bindings = <&to 7>;
-            key-positions = <50 44>;
-        };
-
         scroll-snipe {
             bindings = <&to 8>;
-            key-positions = <50 45>;
-        };
-
-        scroll-snipe-h {
-            bindings = <&to 9>;
-            key-positions = <50 45>;
+            key-positions = <50 46>;
         };
     };
 
@@ -126,21 +116,21 @@
             >;
         };
 
-        Mouse {
+        System {
             bindings = <
-&trans  &none  &none  &none   &none   &none   &ht_boot_reset 0 0  &none   &none      &none      &none      &none           &msc SCRL_UP    &trans
-&none   &none  &none  &none   &none   &none   &none               &none   &mkp LCLK  &mkp MCLK  &mkp RCLK  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT
-&none   &none  &none  &none   &none   &none                               &none      &none      &none      &none           &mmv MOVE_UP    &none
-&none   &none  &none  &trans  &trans  &trans  &trans              &trans  &trans     &trans     &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT
+&trans  &none  &none  &none   &none   &none   &ht_boot_reset 0 0  &none   &none   &none   &none   &none  &none  &trans
+&none   &none  &none  &none   &none   &none   &none               &none   &none   &none   &none   &none  &none  &none
+&none   &none  &none  &none   &none   &none                               &none   &none   &none   &none  &none  &none
+&none   &none  &none  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &none  &none  &none
             >;
         };
 
         Snipe {
             bindings = <
-&trans  &none  &none  &none   &none   &none   &trans  &none   &none      &none      &none      &none           &msc SCRL_UP    &trans
-&none   &none  &none  &none   &none   &none   &none   &none   &mkp LCLK  &mkp MCLK  &mkp RCLK  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT
-&none   &none  &none  &none   &none   &none                   &none      &none      &none      &none           &mmv MOVE_UP    &none
-&none   &none  &none  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
             >;
 
             sensor-bindings = <&uldr_move>, <&uldr_move>;
@@ -148,10 +138,10 @@
 
         Scroll {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans
+&mo 7   &trans  &trans  &trans  &trans  &trans                  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
             >;
 
             sensor-bindings =
@@ -161,10 +151,10 @@
 
         Scroll_h {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
             >;
 
             sensor-bindings =
@@ -174,10 +164,10 @@
 
         Scroll_snipe {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans
+&mo 9   &trans  &trans  &trans  &trans  &trans                  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
             >;
 
             sensor-bindings =
@@ -187,10 +177,10 @@
 
         Scroll_snipe_h {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans
             >;
 
             sensor-bindings =
