@@ -71,8 +71,18 @@
             key-positions = <50 44>;
         };
 
-        scroll-snipe {
+        scroll-h {
             bindings = <&to 7>;
+            key-positions = <50 44>;
+        };
+
+        scroll-snipe {
+            bindings = <&to 8>;
+            key-positions = <50 45>;
+        };
+
+        scroll-snipe-h {
+            bindings = <&to 9>;
             key-positions = <50 45>;
         };
     };
@@ -149,6 +159,19 @@
                 <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
+        Scroll_h {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            sensor-bindings =
+                <&mouse_scrl SCRL_RIGHT SCRL_LEFT>,
+                <&mouse_scrl SCRL_LEFT SCRL_RIGHT>;
+        };
+
         Scroll_snipe {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -160,6 +183,19 @@
             sensor-bindings =
                 <&mouse_scrl SCRL_DOWN SCRL_UP>,
                 <&mouse_scrl SCRL_UP SCRL_DOWN>;
+        };
+
+        Scroll_snipe_h {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            sensor-bindings =
+                <&mouse_scrl SCRL_RIGHT SCRL_LEFT>,
+                <&mouse_scrl SCRL_LEFT SCRL_RIGHT>;
         };
     };
 };

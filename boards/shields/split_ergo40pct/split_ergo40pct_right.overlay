@@ -57,6 +57,7 @@
                 <&zip_xy_scaler 1 4>;
         };
 
+        // 垂直スクロール（通常）
         scroll {
             layers = <6>;
             input-processors =
@@ -64,15 +65,32 @@
                 <&zip_xy_to_scroll_mapper>;
         };
 
-        scroller_snipe {
+        // 水平スクロール（Shift押下時）
+        scroll_horizontal {
             layers = <7>;
             input-processors =
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, // XY_SWAPなし
+                <&zip_xy_to_scroll_mapper>;
+        };
+
+        // 高精細垂直スクロール（スナイプ）
+        scroll_snipe {
+            layers = <8>;
+            input-processors =
                 <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-                <&zip_xy_scaler 1 16>,
+                <&zip_xy_scaler 1 4>,
+                <&zip_xy_to_scroll_mapper>;
+        };
+
+        // 高精細水平スクロール（スナイプ＋Shift）
+        scroll_snipe_horizontal {
+            layers = <9>;
+            input-processors =
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
+                <&zip_xy_scaler 1 4>,
                 <&zip_xy_to_scroll_mapper>;
         };
     };
-
 };
 
 &physical_layout0 {
@@ -115,7 +133,7 @@
         irq-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
 
         snipe-layers = <5>;
-        scroll-layers = <6 7>;
+        scroll-layers = <6 7 8 9>;
     };
 };
 
