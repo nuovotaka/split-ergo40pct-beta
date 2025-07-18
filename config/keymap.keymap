@@ -3,6 +3,20 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&mmv {
+    delay-ms = <0>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <1>;
+    trigger-period-ms = <10>;
+};
+
+&msc {
+    trigger-period-ms = <10>;
+    delay-ms = <0>;
+    acceleration-exponent = <0>;
+    time-to-max-speed-ms = <0>;
+};
+
 / {
     behaviors {
         ht_boot_reset: ht_boot_reset {
@@ -20,6 +34,46 @@
             bindings = <&msc>, <&msc>;
 
             tap-ms = <10>;
+        };
+
+        ul_move: move_up_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOVE UP LEFT";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_LEFT>;
+
+            mods = <MOD_LALT>;
+        };
+
+        dr_move: move_down_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOVE DOWN RIGHT";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_DOWN>, <&mmv MOVE_RIGHT>;
+
+            mods = <MOD_LALT>;
+        };
+
+        uldr_move: move_up_left_down_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&ul_move>, <&dr_move>;
+
+            tap-ms = <10>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        scroll {
+            bindings = <&to 6>;
+            key-positions = <50 44>;
+        };
+
+        scroll-snipe {
+            bindings = <&to 7>;
+            key-positions = <50 45>;
         };
     };
 
@@ -71,7 +125,31 @@
             >;
         };
 
+        Snipe {
+            bindings = <
+&trans  &none  &none  &none   &none   &none   &trans  &none   &none      &none      &none      &none           &msc SCRL_UP    &trans
+&none   &none  &none  &none   &none   &none   &none   &none   &mkp LCLK  &mkp MCLK  &mkp RCLK  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT
+&none   &none  &none  &none   &none   &none                   &none      &none      &none      &none           &mmv MOVE_UP    &none
+&none   &none  &none  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT
+            >;
+
+            sensor-bindings = <&uldr_move>, <&uldr_move>;
+        };
+
         Scroll {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            sensor-bindings =
+                <&mouse_scrl SCRL_DOWN SCRL_UP>,
+                <&mouse_scrl SCRL_UP SCRL_DOWN>;
+        };
+
+        Scroll_snipe {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
