@@ -48,33 +48,49 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+        // 通常カーソル移動
+        input-processors =
+            <&zip_xy_scaler 1 1>;
 
+        // 高精細カーソル移動
         snipe {
             layers = <5>;
             input-processors =
-                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-                <&zip_xy_scaler 1 4>;
+                <&zip_xy_scaler 1 16>;
         };
 
+        // 垂直スクロール（90度回転＋X反転）
         scroll {
             layers = <6>;
             input-processors =
-                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_to_scroll_mapper>;
         };
 
-        scroller_snipe {
+        // 水平スクロール（90度回転＋X反転、swapなし）
+        scroll_horizontal {
             layers = <7>;
             input-processors =
-                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                <&zip_x_scaler 1 16>,
-                <&zip_y_scaler 1 4>,
-                <&zip_scroll_scaler 1 4>,
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
+                <&zip_xy_to_scroll_mapper>;
+        };
+
+        // 高精細垂直スクロール
+        scroll_snipe {
+            layers = <8>;
+            input-processors =
+                <&zip_xy_scaler 1 4>,
+                <&zip_xy_to_scroll_mapper>;
+        };
+
+        // 高精細水平スクロール
+        scroll_snipe_horizontal {
+            layers = <9>;
+            input-processors =
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
+                <&zip_xy_scaler 1 4>,
                 <&zip_xy_to_scroll_mapper>;
         };
     };
-
 };
 
 &physical_layout0 {
@@ -117,7 +133,8 @@
         irq-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
 
         snipe-layers = <5>;
-        scroll-layers = <6 7>;
+        scroll-layers = <6 7 8 9>;
+        scroll-horizontal-layers = <7 9>;
     };
 };
 
