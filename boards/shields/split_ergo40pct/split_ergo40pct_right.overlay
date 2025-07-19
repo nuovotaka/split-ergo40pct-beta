@@ -70,7 +70,6 @@
         scroll_horizontal {
             layers = <7>;
             input-processors =
-                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_to_scroll_mapper>;
         };
 
@@ -87,7 +86,6 @@
         scroll_snipe_horizontal {
             layers = <9>;
             input-processors =
-                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                 <&zip_xy_scaler 1 4>,
                 <&zip_scroll_scaler 1 4>,
                 <&zip_xy_to_scroll_mapper>;
@@ -133,6 +131,9 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
+
+        rotation = <90>;
+        scroll-tick = <10>;
 
         snipe-layers = <5>;
         scroll-layers = <6 7 8 9>;
