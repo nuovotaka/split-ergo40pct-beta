@@ -1,4 +1,5 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <behaviors/input_gestures_accel.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -8,7 +9,7 @@
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
-        zmk,input-processors = &pointer_to_accel;
+        zmk,input-processors = &point_acceleration;
     };
 
     default_transform: keymap_transform_0 {
@@ -46,7 +47,7 @@
             ;
     };
 
-    pointer_to_accel: pointer_to_accel {
+    point_acceleration: point_acceleration {
         compatible = "zmk,input-processor-acceleration";
         status = "okay";
         #input-processor-cells = <0>;
@@ -63,7 +64,7 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&pointer_to_accel>;
+        input-processors = <&point_acceleration>;
         status = "okay";
     };
 
@@ -114,3 +115,7 @@
     status = "okay";
     device = <&trackball>;
 };
+
+&point_acceleration {
+    status = "okay";
+}
