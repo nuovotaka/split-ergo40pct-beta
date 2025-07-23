@@ -15,6 +15,7 @@
 };
 
 &pointer_accel {
+    status = "okay";
     input-type = <INPUT_EV_REL>;
     track-remainders;
     min-factor = <230>;
