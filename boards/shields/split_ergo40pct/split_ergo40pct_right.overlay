@@ -49,8 +49,8 @@
     pointer_accel: pointer_accel {
         compatible = "zmk,input-processor-acceleration";
         status = "okay";
-        input-type = <INPUT_EV_REL>;
-        codes = <REL_X REL_Y>;
+        input-type = <2>;
+        codes = <0 1>;
         track-remainders;
         min-factor = <230>;
         max-factor = <5810>;
