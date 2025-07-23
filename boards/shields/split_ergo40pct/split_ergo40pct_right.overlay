@@ -118,4 +118,4 @@
 
 &point_acceleration {
     status = "okay";
-}
+};
