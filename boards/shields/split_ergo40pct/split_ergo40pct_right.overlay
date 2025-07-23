@@ -64,6 +64,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
         input-processors = <&pointer_accel>;
+        status = "okay";
     };
 
 };
