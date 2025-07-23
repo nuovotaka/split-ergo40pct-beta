@@ -1,7 +1,7 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <behaviors/input_gestures_accel.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <input/processors.dtsi>
-#include <behaviors/input_gestures_accel.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
 
@@ -57,6 +57,7 @@
         speed-threshold = <600>;
         speed-max = <4390>;
         acceleration-exponent = <1>;
+        #input-processor-cells = <0>;
     };
 
     trackball_listener: trackball_listener {
