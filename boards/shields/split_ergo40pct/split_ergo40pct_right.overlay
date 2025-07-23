@@ -6,6 +6,14 @@
 #include "layouts.dtsi"
 
 
+/ {
+    pointer_accel: pointer_accel {
+        compatible = "zmk,input-processor-acceleration";
+        status = "okay";
+        // デフォルト値はここで指定してもOK
+    };
+};
+
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
     track-remainders;
