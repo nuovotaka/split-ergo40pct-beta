@@ -3,6 +3,7 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
+#include <behaviors/input_gestures_accel.dtsi>
 
 
 &pointer_accel {
