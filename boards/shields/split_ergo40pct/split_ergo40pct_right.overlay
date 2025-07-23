@@ -5,6 +5,17 @@
 #include "layouts.dtsi"
 
 
+&pointer_accel {
+    input-type = <INPUT_EV_REL>;
+    min-factor = <500>;
+    max-factor = <5000>;
+    speed-threshold = <1200>;
+    speed-max = <6000>;
+    acceleration-exponent = <2>;
+    track-remainders;
+};
+
+
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
@@ -48,10 +59,9 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        // 通常カーソル移動
-        input-processors =
-            <&zip_xy_scaler 1 1>;
+        input-processors = <&pointer_accel &zip_xy_scaler 1 1>;
     };
+
 };
 
 &physical_layout0 {
