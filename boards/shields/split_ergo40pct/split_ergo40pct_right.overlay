@@ -6,17 +6,19 @@
 #include "layouts.dtsi"
 
 
-&pointer_accel {
-    status = "okay";
-    input-type = <INPUT_EV_REL>;
-    track-remainders;
-    min-factor = <230>;
-    max-factor = <5810>;
-    speed-threshold = <600>;
-    speed-max = <4390>;
-    acceleration-exponent = <1>;
+& {
+    pointer_accel: pointer_accel {
+        compatible = "zmk,input-processor-acceleration";
+        status = "okay";
+        input-type = <INPUT_EV_REL>;
+        track-remainders;
+        min-factor = <230>;
+        max-factor = <5810>;
+        speed-threshold = <600>;
+        speed-max = <4390>;
+        acceleration-exponent = <1>;
+    };
 };
-
 
 / {
     chosen {
