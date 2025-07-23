@@ -7,20 +7,6 @@
 
 
 / {
-    pointer_accel: pointer_accel {
-        compatible = "zmk,input-processor-acceleration";
-        status = "okay";
-        input-type = <INPUT_EV_REL>;
-        track-remainders;
-        min-factor = <230>;
-        max-factor = <5810>;
-        speed-threshold = <600>;
-        speed-max = <4390>;
-        acceleration-exponent = <1>;
-    };
-};
-
-/ {
     chosen {
         zmk,physical-layout = &physical_layout0;
     };
@@ -58,6 +44,18 @@
 			,<&akdk_d 4 GPIO_ACTIVE_HIGH>
 			,<&akdk_d 3 GPIO_ACTIVE_HIGH>
             ;
+    };
+
+    pointer_accel: pointer_accel {
+        compatible = "zmk,input-processor-acceleration";
+        status = "okay";
+        input-type = <INPUT_EV_REL>;
+        track-remainders;
+        min-factor = <230>;
+        max-factor = <5810>;
+        speed-threshold = <600>;
+        speed-max = <4390>;
+        acceleration-exponent = <1>;
     };
 
     trackball_listener: trackball_listener {
