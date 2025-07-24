@@ -9,7 +9,7 @@
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
-        zmk,input-processors = &point_acceleration;
+        zmk,input-processors = &pointer_accel;
     };
 
     default_transform: keymap_transform_0 {
@@ -47,7 +47,7 @@
             ;
     };
 
-    point_acceleration: point_acceleration {
+    pointer_accel: pointer_accel {
         compatible = "zmk,input-processor-acceleration";
         status = "okay";
         #input-processor-cells = <0>;
@@ -65,7 +65,7 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball>;
-        input-processors = <&point_acceleration>;
+        input-processors = <&pointer_accel>;
     };
 
 };
