@@ -7,13 +7,13 @@ manifest:
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
   projects:
-    - name: zmk-pointing-acceleration
-      remote: nuovotaka
-      revision: develop
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-pointing-acceleration
+      remote: nuovotaka
+      revision: develop
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main

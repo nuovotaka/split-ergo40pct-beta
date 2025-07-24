@@ -1,4 +1,3 @@
-
 include:
   - board: akdk_bt1
     shield: split_ergo40pct_left
