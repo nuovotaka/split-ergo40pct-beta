@@ -115,7 +115,3 @@
     status = "okay";
     device = <&trackball>;
 };
-
-&point_acceleration {
-    status = "okay";
-};
