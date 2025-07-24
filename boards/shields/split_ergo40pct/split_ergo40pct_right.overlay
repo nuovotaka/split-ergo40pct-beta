@@ -50,7 +50,6 @@
     pointer_accel: pointer_accel {
         compatible = "zmk,input-processor-acceleration";
         status = "okay";
-        #input-processor-cells = <0>;
         input-type = <2>;
         codes = <0 1>;
         track-remainders;
@@ -114,4 +113,8 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
+};
+
+&pointer_accel {
+    status = "okay";
 };
