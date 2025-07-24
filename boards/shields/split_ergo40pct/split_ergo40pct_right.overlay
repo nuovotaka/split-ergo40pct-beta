@@ -53,10 +53,10 @@
         input-type = <2>;
         codes = <0 1>;
         track-remainders;
-        min-factor = <230>;
-        max-factor = <5810>;
-        speed-threshold = <600>;
-        speed-max = <4390>;
+        min-factor = <500>;
+        max-factor = <5000>;
+        speed-threshold = <2000>;
+        speed-max = <7000>;
         acceleration-exponent = <1>;
     };
 
