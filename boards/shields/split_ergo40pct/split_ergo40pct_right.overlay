@@ -115,3 +115,7 @@
     status = "okay";
     device = <&trackball>;
 };
+
+&pointer_accel {
+    status = "okay";
+};

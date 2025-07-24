@@ -1,7 +1,11 @@
 #include <behaviors.dtsi>
+#include <behaviors/zmk/core.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+
+// 加速モジュールのインクルード
+#include <zmk-pointing-acceleration/dts/behaviors/input_gestures_accel.dtsi>
 
 / {
     behaviors {
