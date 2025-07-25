@@ -53,11 +53,11 @@
         input-type = <2>;
         codes = <0 1>;
         track-remainders;
-        min-factor = <500>;
-        max-factor = <5000>;
-        speed-threshold = <2000>;
-        speed-max = <7000>;
-        acceleration-exponent = <1>;
+        min-factor = <1000>;
+        max-factor = <2500>;
+        speed-threshold = <500>;
+        speed-max = <4000>;
+        acceleration-exponent = <2>;
     };
 
     trackball_listener: trackball_listener {
