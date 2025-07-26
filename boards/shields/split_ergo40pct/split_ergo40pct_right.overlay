@@ -59,6 +59,9 @@
         speed-max = <4000>;
         acceleration-exponent = <2>;
         sensor-dpi = <2500>;  // DPIセンサー
+        y-aspect-scale = <2000>; // 2.0x
+        pair-window-ms = <15>;
+        track-remainders;
     };
 
     trackball_listener: trackball_listener {
