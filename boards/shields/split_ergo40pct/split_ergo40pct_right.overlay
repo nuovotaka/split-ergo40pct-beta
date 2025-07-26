@@ -58,6 +58,7 @@
         speed-threshold = <500>;
         speed-max = <4000>;
         acceleration-exponent = <2>;
+        sensor-dpi = <2500>;  // DPIセンサー
     };
 
     trackball_listener: trackball_listener {
