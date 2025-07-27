@@ -13,7 +13,7 @@ manifest:
       import: app/west.yml
     - name: zmk-pointing-acceleration
       remote: nuovotaka
-      revision: main
+      revision: feature
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
