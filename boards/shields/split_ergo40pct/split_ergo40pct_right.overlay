@@ -53,7 +53,7 @@
         input-type = <2>;
         codes = <0 1>;
         track-remainders;
-        acceleration-exponent = <2>; // 1: linear, 2: exponential
+        acceleration-exponent = <2>; // 1: linear, 2: exponential　max: <5>
         min-factor = <1000>;
         max-factor = <2500>;
         speed-threshold = <500>;
