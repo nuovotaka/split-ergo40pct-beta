@@ -53,6 +53,7 @@
         input-type = <2>;
         codes = <0 1>;
         track-remainders;
+        accel-curve = <1>; // 0: linear, 1: exponential
         min-factor = <1000>;
         max-factor = <2500>;
         speed-threshold = <500>;
