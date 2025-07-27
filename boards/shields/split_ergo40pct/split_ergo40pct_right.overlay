@@ -9,6 +9,7 @@
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
+        zmk,input-processor-acceleration = &pointer_accel;
     };
 
     default_transform: keymap_transform_0 {
