@@ -46,26 +46,6 @@
             ;
     };
 
-    pointer_accel: pointer_accel {
-        compatible = "zmk,input-processor-acceleration";
-        status = "okay";
-        #input-processor-cells = <0>;
-        input-type = <2>;
-        codes = <0 1>;
-        track-remainders;
-        acceleration-exponent = <1>; // 1: linear, 2: exponential　max: <5>
-        min-factor = <1000>;
-        max-factor = <2500>;
-        speed-threshold = <500>;
-        speed-max = <2000>;
-        pair-window-ms = <8>;
-        x-aspect-scale = <1000>;
-        y-aspect-scale = <1200>;
-        sensor-dpi = <1600>;
-        target-dpi = <800>;
-        dpi-multiplier = <1000>;
-    };
-
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "okay";
@@ -116,11 +96,28 @@
     };
 };
 
+&pointer_accel {
+    status = "okay";
+    compatible = "zmk,input-processor-acceleration";
+    status = "okay";
+    #input-processor-cells = <0>;
+    input-type = <2>;
+    codes = <0 1>;
+    track-remainders;
+    acceleration-exponent = <1>; // 1: linear, 2: exponential　max: <5>
+    min-factor = <1000>;
+    max-factor = <2500>;
+    speed-threshold = <500>;
+    speed-max = <2000>;
+    pair-window-ms = <8>;
+    x-aspect-scale = <1000>;
+    y-aspect-scale = <1200>;
+    sensor-dpi = <1600>;
+    target-dpi = <800>;
+    dpi-multiplier = <1000>;
+};
+
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-};
-
-&pointer_accel {
-    status = "okay";
 };
