@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/nuovotaka
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: sekigon-gonnoc
-      url-base: https://github.com/sekigon-gonnoc
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -13,9 +11,9 @@ manifest:
       import: app/west.yml
     - name: zmk-pointing-acceleration-alpha
       remote: nuovotaka
-      revision: develop
-    - name: zmk-driver-paw3222
-      remote: sekigon-gonnoc
+      revision: main
+    - name: zmk-driver-paw3222-alpha
+      remote: nuovotaka
       revision: main
   self:
     path: config
