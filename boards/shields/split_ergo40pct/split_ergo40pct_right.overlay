@@ -51,7 +51,7 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball>;
-        input-processors = <&pointer_accel>, <&zip_xy_scaler 1 4>;
+        input-processors = <&pointer_accel>, <&zip_xy_scaler 1 8>;
     };
 
 };
@@ -104,18 +104,9 @@
     #input-processor-cells = <0>;
     input-type = <2>;
     codes = <0 1>;
-    track-remainders;
-    acceleration-exponent = <2>; // 1: linear, 2: exponential　max: <5>
-    min-factor = <1000>;
-    max-factor = <2500>;
-    speed-threshold = <500>;
-    speed-max = <2000>;
-    pair-window-ms = <8>;
-    x-aspect-scale = <1000>;
-    y-aspect-scale = <1200>;
-    sensor-dpi = <1600>;
-    target-dpi = <800>;
-    dpi-multiplier = <1000>;
+    sensitivity = <1300>;     // 1.3x base sensitivity
+    max-factor = <2800>;      // 2.8x maximum acceleration
+    curve-type = <2>;         // 0=Linear, 1=Mild, 2=Strong
 };
 
 &trackball_listener {
