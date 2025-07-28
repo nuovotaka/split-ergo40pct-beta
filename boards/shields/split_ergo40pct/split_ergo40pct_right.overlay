@@ -105,9 +105,10 @@
     input-type = <2>;
     codes = <0 1>;
     
-    sensitivity = <1000>;     // 1.0x (基準値)
-    max-factor = <1500>;      // 1.5x (控えめな加速)
-    curve-type = <0>;         // Linear (予測しやすい)
+    // Office preset values are automatically applied:
+    sensitivity = 1000 (1.0x)
+    max-factor = 2000 (2.0x)
+    curve-type = 0 (Linear)
 };
 
 &trackball_listener {
