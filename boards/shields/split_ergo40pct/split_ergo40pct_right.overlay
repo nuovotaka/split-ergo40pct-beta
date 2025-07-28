@@ -106,9 +106,9 @@
     codes = <0 1>;
     
     // Office preset values are automatically applied:
-    sensitivity = 1000 // (1.0x)
-    max-factor = 2000  // (2.0x)
-    curve-type = 0     // (Linear)
+    sensitivity = <1000>; // (1.0x)
+    max-factor = <2000>;  // (2.0x)
+    curve-type = <0>;     // (Linear)
 };
 
 &trackball_listener {
