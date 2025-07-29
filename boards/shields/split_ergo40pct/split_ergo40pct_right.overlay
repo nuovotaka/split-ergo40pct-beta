@@ -107,10 +107,11 @@
     input-type = <2>;
     codes = <0 1>;
     
-    // Office preset values are automatically applied:
-    sensitivity = <1000>; // (1.0x)
-    max-factor = <2000>;  // (2.0x)
-    curve-type = <0>;     // (Linear)
+    // Custom Simple settings :
+    sensitivity = <1300>;     // 1.3x base sensitivity
+    max-factor = <2800>;      // 2.8x maximum acceleration
+    curve-type = <2>;         // 0=Linear, 1=Mild, 2=Strong
+    sensor-dpi = <2500>;       // 800 DPI sensor (optional, defaults to 800)
 };
 
 &trackball_listener {
