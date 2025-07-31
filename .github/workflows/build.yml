@@ -19,7 +19,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: firmware
-          path: firmware
+          path: .build
 
       - name: List firmware directory
         run: ls -lR firmware
