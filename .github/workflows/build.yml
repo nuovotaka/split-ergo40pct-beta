@@ -24,6 +24,6 @@ jobs:
       - name: List .build directory
         run: ls -lR .build
 
-      - name: Copy all files to .build
+      - name: Unzip firmware.zip to .build
         run: |
-          cp -a .build/firmware/. .build/
+          unzip -o .build/firmware.zip -d .build/
