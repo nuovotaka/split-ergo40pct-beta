@@ -23,3 +23,6 @@ jobs:
 
       - name: List .build directory
         run: ls -lR .build
+
+      - name: Unzip split-firmware.zip to .build
+        run: unzip -o .build/split-firmware.zip -d .build/
