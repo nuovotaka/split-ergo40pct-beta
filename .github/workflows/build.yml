@@ -4,3 +4,27 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2.1
+
+  package:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Ensure .build directory exists
+        run: mkdir -p .build
+
+      - name: Download firmware artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: firmware
+          path: .build/firmware
+
+      - name: Remove old split-firmware.zip if exists
+        run: rm -f .build/split-firmware.zip
+
+      - name: Zip firmware files
+        run: |
+          cd .build/firmware
+          zip -r ../split-firmware.zip .
