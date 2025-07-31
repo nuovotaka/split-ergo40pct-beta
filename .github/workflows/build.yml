@@ -21,6 +21,8 @@ jobs:
           name: firmware
           path: .build/firmware
 
-      - name: Copy all files to .build
+      - name: Unzip all zip files in .build/firmware to .build
         run: |
-          cp -r .build/firmware/* .build/
+          for f in .build/firmware/*.zip; do
+            unzip -o "$f" -d .build/
+          done
