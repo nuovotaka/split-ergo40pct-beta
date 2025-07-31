@@ -19,10 +19,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: firmware
+          path: firmware
 
       - name: Unzip split-firmware.zip to firmware (if needed)
         run: |
-          if [ -f .build/split-firmware.zip ]; then
+          if [ -f firmware/split-firmware.zip ]; then
             unzip -o .build/split-firmware.zip -d firmware/
           fi
 
