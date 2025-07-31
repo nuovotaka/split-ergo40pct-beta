@@ -19,10 +19,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: firmware
-          path: .build
-
-      - name: List .build directory
-        run: ls -lR .build
 
       - name: Unzip split-firmware.zip to firmware (if needed)
         run: |
