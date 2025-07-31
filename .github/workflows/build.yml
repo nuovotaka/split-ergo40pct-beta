@@ -26,6 +26,16 @@ jobs:
 
       - name: Unzip split-firmware.zip to firmware (if needed)
         run: |
-          if [ -f firmware/split-firmware.zip ]; then
+          if [ -f .build/split-firmware.zip ]; then
             unzip -o .build/split-firmware.zip -d firmware/
           fi
+
+      - name: Commit and push firmware files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add firmware/
+          git commit -m "Add/update firmware files [skip ci]" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
