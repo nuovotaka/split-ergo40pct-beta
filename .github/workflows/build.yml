@@ -12,17 +12,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Ensure .build directory exists
-        run: mkdir -p .build
+      - name: Ensure firmware directory exists
+        run: mkdir -p firmware
 
       - name: Download firmware artifact
         uses: actions/download-artifact@v4
         with:
           name: firmware
-          path: .build
+          path: firmware
 
-      - name: List .build directory
-        run: ls -lR .build
+      - name: List firmware directory
+        run: ls -lR firmware
 
-      - name: Unzip split-firmware.zip to .build
-        run: unzip -o .build/split-firmware.zip -d .build/
+      - name: Unzip split-firmware.zip to firmware (if needed)
+        run: |
+          if [ -f firmware/split-firmware.zip ]; then
+            unzip -o firmware/split-firmware.zip -d firmware/
+          fi
