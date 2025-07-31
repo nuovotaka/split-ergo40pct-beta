@@ -5,7 +5,7 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2.1
 
-  package:
+  extract:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -21,10 +21,6 @@ jobs:
           name: firmware
           path: .build/firmware
 
-      - name: Remove old split-firmware.zip if exists
-        run: rm -f .build/split-firmware.zip
-
-      - name: Zip firmware files
+      - name: Copy all files to .build
         run: |
-          cd .build/firmware
-          zip -r ../split-firmware.zip .
+          cp -r .build/firmware/* .build/
