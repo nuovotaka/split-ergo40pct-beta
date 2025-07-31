@@ -1,6 +1,7 @@
-
-#include <dt-bindings/zmk/matrix_transform.h>
 #include <input/processors.dtsi>
+#include <behaviors/input_gestures_accel.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
 
@@ -8,6 +9,7 @@
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
+        zmk,input-processor-acceleration = &pointer_accel;
     };
 
     default_transform: keymap_transform_0 {
@@ -47,50 +49,11 @@
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
+        status = "okay";
         device = <&trackball>;
-        // 通常カーソル移動
-        input-processors =
-            <&zip_xy_scaler 1 1>;
-
-        // 高精細カーソル移動
-        snipe {
-            layers = <5>;
-            input-processors =
-                <&zip_xy_scaler 1 4>;
-        };
-
-        // 垂直スクロール（90度回転＋X反転）
-        scroll {
-            layers = <6>;
-            input-processors =
-                <&zip_xy_to_scroll_mapper>;
-        };
-
-        // 水平スクロール（90度回転＋X反転、swapなし）
-        scroll_horizontal {
-            layers = <7>;
-            input-processors =
-                <&zip_xy_to_scroll_mapper>;
-        };
-
-        // 高精細垂直スクロール
-        scroll_snipe {
-            layers = <8>;
-            input-processors =
-                <&zip_xy_scaler 1 4>,
-                <&zip_scroll_scaler 1 4>,
-                <&zip_xy_to_scroll_mapper>;
-        };
-
-        // 高精細水平スクロール
-        scroll_snipe_horizontal {
-            layers = <9>;
-            input-processors =
-                <&zip_xy_scaler 1 4>,
-                <&zip_scroll_scaler 1 4>,
-                <&zip_xy_to_scroll_mapper>;
-        };
+        input-processors = <&pointer_accel>, <&zip_xy_scaler 1 4>;
     };
+
 };
 
 &physical_layout0 {
@@ -132,16 +95,29 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
 
-        rotation = <90>;
-        scroll-tick = <10>;
-
-        snipe-layers = <5>;
-        scroll-layers = <6 7 8 9>;
-        scroll-horizontal-layers = <7 9>;
     };
+};
+
+&pointer_accel {
+    status = "okay";
+    compatible = "zmk,input-processor-acceleration";
+    status = "okay";
+    #input-processor-cells = <0>;
+    input-type = <2>;
+    codes = <0 1>;
+    
+    // Custom Simple settings :
+    sensitivity = <1000>;     // 1.3x base sensitivity
+    max-factor = <3000>;      // 2.8x maximum acceleration
+    curve-type = <2>;         // 0=Linear, 1=Mild, 2=Strong
+    sensor-dpi = <800>;       // 800 DPI sensor (optional, defaults to 800)
 };
 
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
+};
+
+zephyr_udc0: &usbd {
+    status = "okay";
 };
