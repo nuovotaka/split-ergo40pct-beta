@@ -21,11 +21,11 @@ jobs:
           name: firmware
           path: .build
 
-      - name: List firmware directory
-        run: ls -lR firmware
+      - name: List .build directory
+        run: ls -lR .build
 
       - name: Unzip split-firmware.zip to firmware (if needed)
         run: |
           if [ -f firmware/split-firmware.zip ]; then
-            unzip -o firmware/split-firmware.zip -d firmware/
+            unzip -o .build/split-firmware.zip -d firmware/
           fi
