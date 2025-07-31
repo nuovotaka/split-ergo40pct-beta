@@ -15,14 +15,12 @@ jobs:
       - name: Ensure .build directory exists
         run: mkdir -p .build
 
-      - name: Download firmware artifacts
+      - name: Download firmware artifact
         uses: actions/download-artifact@v4
         with:
           name: firmware
-          path: .build/firmware
+          path: .build
 
-      - name: Unzip all zip files in .build/firmware to .build
+      - name: Unzip firmware.zip to .build
         run: |
-          for f in .build/firmware/*.zip; do
-            unzip -o "$f" -d .build/
-          done
+          unzip -o .build/firmware.zip -d .build/
