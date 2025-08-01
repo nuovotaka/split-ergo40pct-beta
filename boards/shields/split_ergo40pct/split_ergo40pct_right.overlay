@@ -120,4 +120,5 @@
 
 zephyr_udc0: &usbd {
     status = "okay";
+    compatible = "vnd,usb-device";
 };
