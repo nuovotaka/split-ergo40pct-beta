@@ -5,7 +5,7 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: akdk_bt1
     shield: split_ergo40pct_right
-    snippet: zmk-usb-logging
-    cmake-args: -DCONFIG_ZMK_STUDIO=n
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: akdk_bt1
     shield: settings_reset
