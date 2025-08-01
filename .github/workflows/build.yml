@@ -6,35 +6,3 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2.1
-
-  extract:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: リポジトリをチェックアウト
-        uses: actions/checkout@v4
-
-      - name: firmwareディレクトリを作成
-        run: mkdir -p firmware
-
-      - name: ファームウェアアーティファクトをダウンロード
-        uses: actions/download-artifact@v4
-        with:
-          name: firmware
-          path: firmware
-
-      - name: ファームウェアをzip化
-        run: |
-          cd firmware
-          zip -r firmware.zip .
-          cd ..
-
-      - name: firmware/firmware.zipをコミット＆プッシュ
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add firmware/firmware.zip
-          git commit -m "Add/update firmware.zip [skip ci]" || echo "No changes to commit"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
