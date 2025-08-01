@@ -21,12 +21,6 @@ jobs:
           name: firmware
           path: firmware
 
-      - name: Unzip split-firmware.zip to firmware (if needed)
-        run: |
-          if [ -f firmware/split-firmware.zip ]; then
-            unzip -o .build/split-firmware.zip -d firmware/
-          fi
-
       - name: Commit and push firmware files
         run: |
           git config --global user.name "github-actions[bot]"
