@@ -106,7 +106,7 @@
     input-type = <2>;
     codes = <0 1>;
     
-    // Custom Simple settings :
+    // standard settings :
     sensitivity = <1000>;      // 1.0x base sensitivity
     max-factor = <4000>;       // 4.0x maximum
     curve-type = <2>;          // Strong basic curve
