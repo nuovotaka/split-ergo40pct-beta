@@ -121,4 +121,9 @@
 zephyr_udc0: &usbd {
     status = "okay";
     compatible = "vnd,usb-device";
+
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+
+    };
 };
