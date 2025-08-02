@@ -106,17 +106,17 @@
     input-type = <2>;
     codes = <0 1>;
 
-    // Heavy Acceleration (Level 2 Standard)
+    // (Level 2 Standard) Custom
     track-remainders;          // Enable precision tracking
-    sensitivity = <1000>;      // 1.0x base sensitivity
-    max-factor = <4000>;       // 4.0x maximum
-    curve-type = <2>;          // Strong basic curve
-    y-boost = <1000>;          // 1.0x Y-axis boost
-    speed-threshold = <1000>;  // Start accelerating earlier
-    speed-max = <6000>;        // 6000 counts/sec for max accel
-    min-factor = <700>;        // 0.7x minimum for precision
-    acceleration-exponent = <4>; // Strong exponential curve
-    sensor-dpi = <800>;        // 800 DPI sensor
+    sensitivity = <1500>;      // 1.5x base sensitivity
+    max-factor = <5000>;       // 5.0x maximum acceleration
+    curve-type = <2>;          // Strong curve for responsive feel
+    y-boost = <2500>;          // 2.5x Y-axis boost for widescreen
+    speed-threshold = <200>;   // Early acceleration start
+    speed-max = <4000>;        // Lower speed for max acceleration
+    min-factor = <800>;        // 0.8x minimum for precision
+    acceleration-exponent = <5>; // Aggressive exponential curve
+    sensor-dpi = <1200>;        // 800 DPI sensor
 
 };
 
