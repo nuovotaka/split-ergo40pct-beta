@@ -96,7 +96,11 @@
         irq-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
 
         rotation = <90>;
-        snipe-layers = <5>;
+
+        snipe-layers = <5 8 9>;
+        snipe-cpi = <400>;      // 明示的にCPI値を設定
+        res-cpi = <1600>;       // 通常時のCPI（snipe-cpiより高い値）
+
         scroll-layers = <6 7 8 9>;
         scroll-horizontal-layers = <7 9>;
     };
