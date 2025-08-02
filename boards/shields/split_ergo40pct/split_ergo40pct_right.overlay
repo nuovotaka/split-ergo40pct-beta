@@ -110,17 +110,16 @@
     input-type = <2>;
     codes = <0 1>;
 
-    track-remainders;
-    // より積極的な加速設定
-    sensitivity = <800>;           // 1.3x base sensitivity
-    max-factor = <5000>;            // 5.0x maximum
-    curve-type = <2>;               // Strong curve
-    y-boost = <2500>;               // 1.3x Y-axis boost
-    speed-threshold = <200>;        // 早めに加速開始
-    speed-max = <4000>;             // より低い速度で最大加速
-    min-factor = <800>;             // 0.8x minimum
-    acceleration-exponent = <5>;    // Strong exponential curve
-    sensor-dpi = <800>;             // センサーDPIを確認
+    track-remainders;          // Enable precision tracking
+    sensitivity = <800>;      // 1.3x base sensitivity
+    max-factor = <5000>;       // 5.0x maximum acceleration
+    curve-type = <2>;          // Strong curve for responsive feel
+    y-boost = <2500>;          // 2.5x Y-axis boost for widescreen
+    speed-threshold = <200>;   // Early acceleration start
+    speed-max = <4000>;        // Lower speed for max acceleration
+    min-factor = <800>;        // 0.8x minimum for precision
+    acceleration-exponent = <4>; // Strong exponential curve
+    sensor-dpi = <1500>;        // 800 DPI sensor
 
 };
 
