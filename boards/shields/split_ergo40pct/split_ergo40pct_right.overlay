@@ -110,7 +110,6 @@
 &pointer_accel {
     status = "okay";
     compatible = "zmk,input-processor-acceleration";
-    status = "okay";
     #input-processor-cells = <0>;
     input-type = <2>;
     codes = <0 1>;
@@ -125,7 +124,6 @@
     min-factor = <800>;        // 0.8x minimum for precision
     acceleration-exponent = <4>; // Strong exponential curve
     sensor-dpi = <1500>;        // 800 DPI sensor
-
 };
 
 &trackball_listener {
