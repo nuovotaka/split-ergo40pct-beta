@@ -98,9 +98,9 @@
         rotation = <90>;
 
         snipe-layers = <5 8 9>;
-        res-cpi = <1600>;        // 通常時のCPI
-        snipe-cpi = <400>;       // スナイプ時のCPI（1/4に削減）
-        snipe-divisor = <3>;     // さらに座標値を1/3に削減
+        res-cpi = <1000>;        // 通常時のCPI
+        snipe-cpi = <200>;       // スナイプ時のCPI（1/5に削減）
+        snipe-divisor = <2>;     // さらに座標値を1/2に削減
 
         scroll-layers = <6 7 8 9>;
         scroll-horizontal-layers = <7 9>;
@@ -123,7 +123,7 @@
     speed-max = <4000>;        // Lower speed for max acceleration
     min-factor = <800>;        // 0.8x minimum for precision
     acceleration-exponent = <4>; // Strong exponential curve
-    sensor-dpi = <1500>;        // 800 DPI sensor
+    sensor-dpi = <2000>;        // default: 800 DPI sensor
 };
 
 &trackball_listener {
