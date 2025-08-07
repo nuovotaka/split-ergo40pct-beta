@@ -114,16 +114,6 @@
     input-type = <2>;
     codes = <0 1>;
 
-    track-remainders;          // Enable precision tracking
-    sensitivity = <800>;      // 1.3x base sensitivity
-    max-factor = <5000>;       // 5.0x maximum acceleration
-    curve-type = <2>;          // Strong curve for responsive feel
-    y-boost = <2500>;          // 2.5x Y-axis boost for widescreen
-    speed-threshold = <200>;   // Early acceleration start
-    speed-max = <4000>;        // Lower speed for max acceleration
-    min-factor = <800>;        // 0.8x minimum for precision
-    acceleration-exponent = <4>; // Strong exponential curve
-    sensor-dpi = <2000>;        // default: 800 DPI sensor
 };
 
 &trackball_listener {
