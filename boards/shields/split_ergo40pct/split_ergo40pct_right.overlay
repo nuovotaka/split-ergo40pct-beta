@@ -111,8 +111,8 @@
     status = "okay";
     compatible = "zmk,input-processor-acceleration";
     #input-processor-cells = <0>;
-    input-type = <2>;
-    codes = <0 1>;
+    input-type = <INPUT_EV_REL>;          // Relative coordinate event
+    codes = <INPUT_REL_X INPUT_REL_Y>;    // Relative X coordinate, Relative Y coordinate
 
 };
 
