@@ -99,8 +99,8 @@
 
         snipe-layers = <5 8 9>;
         res-cpi = <1000>;        // 通常時のCPI
-        snipe-cpi = <200>;       // スナイプ時のCPI（1/5に削減）
-        snipe-divisor = <2>;     // さらに座標値を1/2に削減
+        snipe-cpi = <600>;       // スナイプ時のCPI（1/5に削減）
+        snipe-divisor = <1>;     // さらに座標値を1/2に削減
 
         scroll-layers = <6 7 8 9>;
         scroll-horizontal-layers = <7 9>;
