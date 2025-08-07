@@ -120,3 +120,7 @@
     status = "okay";
     device = <&trackball>;
 };
+
+zephyr_udc0: &usbd {
+    status = "okay";
+};
