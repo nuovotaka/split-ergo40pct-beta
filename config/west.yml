@@ -11,9 +11,9 @@ manifest:
       import: app/west.yml
     - name: zmk-pointing-acceleration-alpha
       remote: nuovotaka
-      revision: hotfix
+      revision: main
     - name: zmk-driver-paw3222-alpha
       remote: nuovotaka
-      revision: hotfix
+      revision: main
   self:
     path: config
