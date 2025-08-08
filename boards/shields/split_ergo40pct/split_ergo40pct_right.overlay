@@ -114,6 +114,16 @@
     input-type = <INPUT_EV_REL>;          // Relative coordinate event
     codes = <INPUT_REL_X INPUT_REL_Y>;    // Relative X coordinate, Relative Y coordinate
 
+    // カスタム設定
+    sensitivity = <1200>;
+    max-factor = <2800>;
+    curve-type = <2>;
+    y-boost = <1150>;
+    speed-threshold = <400>;
+    speed-max = <3500>;
+    min-factor = <850>;
+    acceleration-exponent = <3>;
+    sensor-dpi = <1000>;
 };
 
 &trackball_listener {
