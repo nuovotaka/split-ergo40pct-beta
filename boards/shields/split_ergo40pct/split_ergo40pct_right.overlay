@@ -115,15 +115,15 @@
     codes = <INPUT_REL_X INPUT_REL_Y>;    // Relative X coordinate, Relative Y coordinate
 
     // カスタム設定
-    sensitivity = <1200>;
-    max-factor = <2800>;
-    curve-type = <2>;
-    y-boost = <1150>;
-    speed-threshold = <400>;
-    speed-max = <3500>;
-    min-factor = <850>;
-    acceleration-exponent = <3>;
-    sensor-dpi = <1000>;
+    sensitivity = <1000>;           // 1.0x base (標準)
+    max-factor = <2000>;           // 2.0x maximum (適度)
+    curve-type = <0>;              // Linear curve
+    y-boost = <1000>;              // 1.0x Y-axis (同等)
+    speed-threshold = <500>;       // より低い閾値
+    speed-max = <2500>;            // より低い最大速度
+    min-factor = <1000>;           // 1.0x minimum
+    acceleration-exponent = <1>;   // Linear acceleration
+    sensor-dpi = <1000>;           // 1000 DPI
 };
 
 &trackball_listener {
