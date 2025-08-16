@@ -16,7 +16,6 @@
 
         paw_mode: paw_mode {
             compatible = "paw32xx,mode";
-            label = "PAW_MODE";
             #binding-cells = <1>;
         };
     };
