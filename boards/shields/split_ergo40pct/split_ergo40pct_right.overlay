@@ -109,8 +109,8 @@
         scroll-snipe-divisor = <3>;
         scroll-snipe-tick = <20>;
 
-        // switch-method = "toggle";   // "layer", "toggle", "hold", "combo"
-        // use-cycle-modes;            // Cycle through all modes instead of just toggle
+        switch-method = "toggle";   // "layer", "toggle", "hold", "combo"
+        use-cycle-modes;            // Cycle through all modes instead of just toggle
     };
 };
 
