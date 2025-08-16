@@ -23,16 +23,22 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_paw_toggle {
+        combo_paw_move_sc_toggle {    // move <-> scroll
             timeout-ms = <50>;
             key-positions = <50 44>;  // 2つのキーを同時押し
             bindings = <&paw_mode 0>; // トグル
         };
 
+        combo_paw_snipe_toggle {      // Normal <-> Snipe
+            timeout-ms = <50>;
+            key-positions = <50 45>;  // 2つのキーを同時押し
+            bindings = <&paw_mode 1>; // トグル
+        };
+
         combo_paw_cycle {
             timeout-ms = <50>;
             key-positions = <50 46>;  // 別の2つのキーを同時押し
-            bindings = <&paw_mode 1>; // サイクル
+            bindings = <&paw_mode 2>; // サイクル
         };
     };
 
