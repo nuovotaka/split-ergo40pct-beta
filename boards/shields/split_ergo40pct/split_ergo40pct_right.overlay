@@ -103,7 +103,7 @@
         scroll-snipe-divisor = <3>;
         scroll-snipe-tick = <20>;
 
-        switch-method = "toggle";   // "layer", "toggle", "hold", "combo"
+        switch-method = "toggle";   // "layer", "toggle"
     };
 };
 
